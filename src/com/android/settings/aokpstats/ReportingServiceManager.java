@@ -26,8 +26,6 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.util.Log;
-import android.os.RemoteException;
-import android.app.ActivityManagerNative;
 
 public class ReportingServiceManager extends BroadcastReceiver {
 
@@ -40,10 +38,6 @@ public class ReportingServiceManager extends BroadcastReceiver {
             setAlarm(ctx);
         } else {
             launchService(ctx);
-        }
-        try {
-            ActivityManagerNative.getDefault().setProcessLimit(1);
-        } catch (RemoteException e) {
         }
     }
 
